@@ -127,11 +127,11 @@
         }
         .game-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);          /* 強制最多 4 欄 */
             gap: 1rem;
             margin-top: 1.5rem;
         }
-
+        
         .game-gallery img {
             width: 100%;
             height: auto;
@@ -139,16 +139,23 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             object-fit: cover;
+            aspect-ratio: 1 / 1;   /* 可選：強制正方形比例，避免高度不一致 */
         }
-
+        
         .game-gallery img:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 20px rgba(196,30,58,0.5);
         }
-
+        
         @media (max-width: 768px) {
             .game-gallery {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                grid-template-columns: repeat(2, 1fr);     /* 手機/平板變 2 欄 */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .game-gallery {
+                grid-template-columns: 1fr;                /* 極小螢幕變單欄 */
             }
         }
         @media (max-width: 768px) {
@@ -203,11 +210,11 @@
 — 熟了之後會話很多，請自行評估風險
             </div>
             <div class="game-gallery">
-                <img src="/images/deepspace/0.png" alt="0">
-                <img src="/images/deepspace/1.png" alt="1">
-                <img src="/images/deepspace/2.png" alt="2">
-                <img src="/images/deepspace/3.png" alt="3">
-                <img src="/images/deepspace/4.png" alt="4">
+                <img src="/onyx0824Game/images/deepspace/0.png" alt="0">
+                <img src="/onyx0824Game/images/deepspace/1.png" alt="1">
+                <img src="/onyx0824Game/images/deepspace/2.png" alt="2">
+                <img src="/onyx0824Game/images/deepspace/3.png" alt="3">
+                <img src="/onyx0824Game/images/deepspace/4.png" alt="4">
             </div>
         </div>
 
