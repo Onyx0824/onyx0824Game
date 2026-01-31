@@ -163,6 +163,49 @@
             .container { padding: 1.5rem 1rem; }
             section { padding: 2rem 1.5rem; }
         }
+        /* ===== 底部大橫幅輪播 ===== */
+        .banner-slider {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 4rem;
+            background: #000;
+            border-top: 1px solid rgba(196,30,58,0.3);
+        }
+        
+        .banner-track {
+            display: flex;
+            width: max-content;
+            animation: banner-scroll 40s linear infinite;
+        }
+        
+        .banner-track img {
+            width: 100vw;
+            height: 420px;
+            object-fit: cover;
+            flex-shrink: 0;
+            filter: brightness(0.9);
+        }
+
+        .banner-slider:hover .banner-track {
+            animation-play-state: paused;
+        }
+
+        /* 滾動動畫 */
+        @keyframes banner-scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* 手機調整 */
+        @media (max-width: 768px) {
+            .banner-track img {
+                height: 260px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -279,7 +322,20 @@
     </section>
 
 </div>
-  
+
+<!-- 底部大橫幅輪播 -->
+<div class="banner-slider">
+    <div class="banner-track">
+        <img src="/onyx0824Game/images/banner/1.jpg" alt="banner1">
+        <img src="/onyx0824Game/images/banner/2.jpg" alt="banner2">
+        <img src="/onyx0824Game/images/banner/3.jpg" alt="banner3">
+        <!-- 複製一份，讓動畫無縫循環 -->
+        <img src="/onyx0824Game/images/banner/1.jpg" alt="">
+        <img src="/onyx0824Game/images/banner/2.jpg" alt="">
+        <img src="/onyx0824Game/images/banner/3.jpg" alt="">
+    </div>
+</div>
+    
     <footer>
         <p>© 2026 大麻的遊戲宇宙 | Hosted on GitHub Pages</p>
         <p>主題色來自秦徹的紅 · 純手刻一頁式 · 持續為秦徹發瘋中</p>
